@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: frontend
+  name: frontend
+spec:
+  containers:
+  - image: skuleshov/micro_frontend:01
+    name: frontend
+    resources: {}
+    env:
+    - name: PRODUCT_CATALOG_SERVICE_ADDR
+      value: "127.0.0.1:3550"
+    - name: CURRENCY_SERVICE_ADDR
+      value: "127.0.0.1:7000"
+    - name: CART_SERVICE_ADDR
+      value: "127.0.0.1:7070"
+    - name: RECOMMENDATION_SERVICE_ADDR
+      value: "127.0.0.1:8080"
+    - name: SHIPPING_SERVICE_ADDR
+      value: "127.0.0.1:50051"
+    - name: CHECKOUT_SERVICE_ADDR
+      value: "127.0.0.1:5050"
+    - name: AD_SERVICE_ADDR
+      value: "127.0.0.1:9555"
+    - name: ENV_PLATFORM
+      value: "gcp"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  
+status: {}
