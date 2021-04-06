@@ -63,6 +63,7 @@ coredns   1/1     1            1           3h28m
 
 #### maxSurge и maxUnavailable
 Аналог blue-green: paymentservice-deployment-bg.yaml
+
 Reverse Rolling Update: paymentservice-deployment-reverse.yaml
 
 ### 4. Probes
@@ -72,9 +73,10 @@ Reverse Rolling Update: paymentservice-deployment-reverse.yaml
 Сделан манифест node-exporter-daemonset.yaml метрики которого доступны по адресу localhost:9100/metrics при форварде kubectl port-forward <имя любого pod в DaemonSet> 9100:9100
 
 Для запуска на воркерах и мастер нодах используем tolerations
+```
 tolerations:
   - operator: "Exists"
-
+```
 
 
 
