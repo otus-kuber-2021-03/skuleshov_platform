@@ -46,3 +46,37 @@ coredns   1/1     1            1           3h28m
 #### Выясните причину, по которой pod frontend находится в статусе Error.
 Для запуска не хватает переменных окружения. Новый манифест frontend-pod-healthy.yaml с добавленными переменными запускается без ошибок.
 
+
+## Домашнее задание 2
+### 1.
+Создан кластер kind
+
+### 2. ReplicaSet
+Создан и применен манифест frontend-replicaset.yaml. Исправлено описание ReplicaSet. Игры с replicas.
+
+#### Почему обновление ReplicaSet не повлекло обновление запущенных pod?
+
+Потому что контроллер репликасет не занимается переконфигурированием подов в реалтайме, он только поддерживает кол-во реплик пода.
+
+### 3. Deployment
+Собраны образы с тегами v0.0.1 и v0.0.2 и развернут под paymentService. Сделаны манифесты: paymentservice-replicaset.yaml, paymentservice-deployment.yaml, 
+
+#### maxSurge и maxUnavailable
+Аналог blue-green: paymentservice-deployment-bg.yaml
+
+Reverse Rolling Update: paymentservice-deployment-reverse.yaml
+
+### 4. Probes
+Применен манифест с readinessProbe
+
+### 5. DaemonSet
+Сделан манифест node-exporter-daemonset.yaml метрики которого доступны по адресу localhost:9100/metrics при форварде kubectl port-forward <имя любого pod в DaemonSet> 9100:9100
+
+Для запуска на воркерах и мастер нодах используем tolerations
+```
+tolerations:
+  - operator: "Exists"
+```
+
+
+
