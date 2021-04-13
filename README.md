@@ -78,5 +78,27 @@ tolerations:
   - operator: "Exists"
 ```
 
+## Домашнее задание 3
+### task01
+Создан Service Account bob, дана ему роль admin в рамках всего кластера  
+```
+✗ kubectl get clusterrolebindings|grep bob
+bob                                                    ClusterRole/cluster-admin                                                          3m51s
+```
+Создан Service Account dave без доступа к кластеру  
+
+### task02
+Создан Namespace prometheus  
+Создан Service Account carol в namespace prometheus  
+Дан всем Service Account в Namespace prometheus возможность делать get, list, watch в отношении Pods всего кластера  
+
+### task03
+Создан Namespace dev  
+Создан Service Account jane в Namespace dev  
+Дана роль admin для jane в рамках Namespace dev  
+Создан Service Account ken в Namespace dev  
+Дана роль view для ken в рамках Namespace dev
+
+
 
 
