@@ -100,5 +100,13 @@ bob                                                    ClusterRole/cluster-admin
 Дана роль view для ken в рамках Namespace dev
 
 
+## Домашнее задание 4
+Развернут StatefulSet c Minio с локальным s3 хранилищем  
+Создан Headless Service  
+Проверить работу можно пробросив порт: kubectl port-forward minio-0 9000:9000  
+
+### Задание с звездочкой
+Файлы лежат в директории secrets.  
+Секретные данные помещены в secrets secret-minio и настроена конфигурация на их использлование.
 
 
