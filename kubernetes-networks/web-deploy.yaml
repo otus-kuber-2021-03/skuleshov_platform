@@ -14,6 +14,7 @@ spec:
       maxSurge: 100%
   template:
     metadata:
+      name: web
       labels:
         app: web
     spec: 
