@@ -124,3 +124,18 @@ bob                                                    ClusterRole/cluster-admin
 Создание правил Ingress  
 
 
+## Домашнее задание 6
+### Certmanager
+Создать ClusterIssuer
+
+### Chartmuseum
+letsencrypt работает
+
+### Harbor
+Установлен
+
+### Свой Chart
+
+### Kubecfg
+
+### Kustomize
